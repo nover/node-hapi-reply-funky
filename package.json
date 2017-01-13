@@ -1,0 +1,19 @@
+{
+  "name": "node-hapi-reply-funky",
+  "version": "1.0.0",
+  "description": "Test funkyness with hapi reply function",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha test/*.spec.js"
+  },
+  "author": "Nicklas Laine Overgaard <nicklas@skarp.dk>",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "unexpected": "^10.22.0"
+  }
+}
