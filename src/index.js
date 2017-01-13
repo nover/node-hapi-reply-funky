@@ -24,7 +24,10 @@ server.route({
     // Outcome: We get headers but NO content
     const prom = new Promise(function (resolve, reject) {
       const response = performRequest();
-      response.on('response', resolve);
+      response.on('response', (responseStream) => {
+        responseStream.pause();
+        resolve(responseStream);
+      });
       response.on('error', reject);
     });
     reply(prom);
@@ -41,6 +44,7 @@ server.route({
     const response = performRequest();
     response.on('error', reply);
     response.on('response', (responseStream) => {
+      responseStream.pause();
       setImmediate(() => {
         reply(responseStream);
       });
