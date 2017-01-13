@@ -5,7 +5,6 @@ describe('HAPI stream handling', function () {
   let server = null;
   beforeEach(() => {
     server = require('../src');
-
   });
 
   it('should work with pipe to reply', function (done) {
